@@ -1,13 +1,8 @@
 const express = require("express");
-
 const cors = require("cors");
-
 const app = express();
-
 app.use(cors());
-
 app.use(express.json());
-
 const port = 5005;
 
 /** define sequelize connection here */
@@ -18,6 +13,7 @@ const sequelize = new Sequelize("orm", "root", "", {
   dialect: "mysql",
 });
 
+/**Sequelize method define auth */
 sequelize
   .authenticate()
   .then(() => {
